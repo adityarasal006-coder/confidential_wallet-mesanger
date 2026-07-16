@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+
+# Environment
+.env
+.env.local
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+out/
+
+# Hardhat generated files
+contracts/artifacts/
+contracts/cache/

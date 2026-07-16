@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id              String   @id @default(uuid())
+  walletAddress   String   @unique
+  stealthPub      String?  
+  isVerified      Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  messagesSent    Message[] @relation("Sender")
+  messagesRecv    Message[] @relation("Receiver")
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  senderId    String
+  receiverId  String
+  content     String   // Encrypted payload
+  timestamp   DateTime @default(now())
+  isRead      Boolean  @default(false)
+
+  sender      User     @relation("Sender", fields: [senderId], references: [id])
+  receiver    User     @relation("Receiver", fields: [receiverId], references: [id])
+}

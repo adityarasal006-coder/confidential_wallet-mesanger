@@ -1,0 +1,12 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet .",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://confidential-messenger-backend.onrender.com/api/:path*"
+    }
+  ]
+}

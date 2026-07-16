@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID: "demo_id_for_ci"
+
+      - name: Build Backend Docker Image
+        run: docker-compose build backend
