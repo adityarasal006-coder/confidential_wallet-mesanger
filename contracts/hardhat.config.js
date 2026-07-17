@@ -17,7 +17,7 @@ export default {
     fuji: {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       chainId: 43113,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.PRIVATE_KEY && process.env.PRIVATE_KEY.length === 64 ? [process.env.PRIVATE_KEY] : ["0000000000000000000000000000000000000000000000000000000000000001"],
     },
   },
 };

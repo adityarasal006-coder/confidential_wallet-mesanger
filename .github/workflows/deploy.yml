@@ -17,13 +17,28 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
+      - name: Frontend Install
+        working-directory: ./frontend
         run: npm ci
 
-      - name: Build Next.js
+      - name: Frontend Build
+        working-directory: ./frontend
         run: npm run build
         env:
           NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID: "demo_id_for_ci"
 
-      - name: Build Backend Docker Image
-        run: docker-compose build backend
+      - name: Backend Install
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Backend Build
+        working-directory: ./backend
+        run: npm run build
+
+      - name: Contracts Install
+        working-directory: ./contracts
+        run: npm ci
+
+      - name: Contracts Compile
+        working-directory: ./contracts
+        run: npx hardhat compile

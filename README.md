@@ -1,6 +1,12 @@
 # Confidential Wallet-to-Wallet Messenger 🛡️
 *Private Conversations. Private Payments. Powered by Avalanche.*
 
+![Avalanche](https://img.shields.io/badge/Avalanche-E84142?style=for-the-badge&logo=avalanche&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
 Built for the **Avalanche Speedrun 2026 Hackathon**.
 
 ## 🌟 Project Overview

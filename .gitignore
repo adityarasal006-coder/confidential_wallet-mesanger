@@ -1,23 +1,67 @@
+# ===========================
 # Dependencies
+# ===========================
 node_modules/
 
+# ===========================
 # Next.js
+# ===========================
 .next/
+out/
 
-# Environment
+# ===========================
+# Environment Variables
+# ===========================
 .env
 .env.local
 .env.*
 !.env.example
 
+# ===========================
 # Logs
+# ===========================
 *.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
-# Build
+# ===========================
+# Build Output
+# ===========================
 dist/
 build/
-out/
 
-# Hardhat generated files
+# ===========================
+# Hardhat
+# ===========================
 contracts/artifacts/
 contracts/cache/
+typechain/
+typechain-types/
+
+# ===========================
+# Database
+# ===========================
+backend/prisma/dev.db
+*.db
+*.sqlite
+*.sqlite3
+
+# ===========================
+# OS Files
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# IDE
+# ===========================
+.vscode/
+.idea/
+
+node_modules/
+.next/
+.env.local
+.env
+dist/
+out/
